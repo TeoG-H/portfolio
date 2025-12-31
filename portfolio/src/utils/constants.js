@@ -1,8 +1,8 @@
 export const PERSONAL_INFO = {
   name: "Teodor Ghiorghiu",
-  title: "React Developer & UI/UX Enthusiast",
+  title: "Software Engineering Studen ",
   email: "alex@timeprogram.com",
-  location: "San Francisco, CA",
+  location: "AC Iași",
   tagline: "Crafting seamless digital experiences with modern web technologies",
   resume: "/resume.pdf",
   bio: [
