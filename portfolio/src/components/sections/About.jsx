@@ -17,7 +17,7 @@ const About = () => {
     { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   ];
   return (
-    <section id="about" className="relative py-20 bg-black overflow-hidden">
+    <section id="about" className="relative py-14 bg-black overflow-hidden ">
       <RadialGradientBackground variant="about" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
