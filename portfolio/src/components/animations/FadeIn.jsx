@@ -1,11 +1,14 @@
-import React from 'react'
 import { useState, useEffect, useRef} from 'react';
 
+//children e tot continutul JSX pe care il contine FadeIn  <FadeIn> </FadeIn>
 const FadeIn = ({children, delay=0, duration=500, threshold=0.1 }) => {
   
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 
+  
+  //IntersectionObserver are nevoie de un element DOM nu de continut JSX de asta folosesc ref
+  //threshold parametru al inter.. care imi spune ca atunci cand vede ..% din element porneste animatia
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -20,6 +23,7 @@ const FadeIn = ({children, delay=0, duration=500, threshold=0.1 }) => {
       }
     );
 
+    //atasez observerul la element
     if (elementRef.current) {
       observer.observe(elementRef.current);
     }

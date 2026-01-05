@@ -1,6 +1,5 @@
 import { useState } from "react"
-import React from 'react'
-import {Mail, MapPin, Github, Linkedin, Twitter, Send, MessageSquare } from 'lucide-react'
+import { Mail, MapPin, Github, Linkedin, Instagram, Send, MessageSquare } from 'lucide-react'
 import { PERSONAL_INFO, SOCIAL_LINKS } from "../../utils/constants"
 import FadeIn from "../animations/FadeIn"
 
@@ -27,13 +26,13 @@ const Contact = () => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
-        setStatus({ type: 'error', message: 'Please fill in all fields' });
+        setStatus({ type: 'error', message: 'Te rog completează toate câmpurile' });
         return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-        setStatus({ type: 'error', message: 'Please enter a valid email' });
+        setStatus({ type: 'error', message: 'Mesajul a fost trimis cu succes!' });
         return;
     }
 
@@ -44,9 +43,9 @@ const Contact = () => {
     };
 
     const socialIcons = {
-    github: Github,
-    linkedin: Linkedin,
-    twitter: Twitter
+      github: Github,
+      linkedin: Linkedin,
+      instagram: Instagram
     };
 
  return (
@@ -67,11 +66,11 @@ const Contact = () => {
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">
-            Let's Work Together
+            Hai să colaborăm
           </h2>
 
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Have a project in mind? Let's discuss how we can bring it to life.
+            Ai un proiect sau o idee? Hai să discutăm cum o putem transforma în realitate.
           </p>
         </div>
       </FadeIn>
@@ -91,7 +90,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300  "
-                  placeholder="Your name"
+                  placeholder="Nuele tău"
                 />
               </div>
 
@@ -106,7 +105,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300  "
-                  placeholder="your.email@example.com"
+                  placeholder="email@exemplu.com"
                 />
               </div>
 
@@ -121,7 +120,7 @@ const Contact = () => {
                   onChange={handleChange}
                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all duration-300 resize-none "
                   rows={5}
-                  placeholder="Tell me about your project"
+                  placeholder="Spune-mi câteva detalii despre proiectul tău"
                 />
               </div>
 
@@ -129,7 +128,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full px-6 py-3 bg-linear-to-r from-primary/10 to-primary text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 group"  
               >
-                <span>Send Message</span>
+                <span>Trimite mesajul</span>
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
 
@@ -152,10 +151,10 @@ const Contact = () => {
             <div className="space-y-8">
                 <div>
                     <h3 className="text-2xl font-semibold text-white mb-4">
-                        Let's Connect
+                        Hai să ținem legătura
                     </h3>
                     <p className="text-white/60 leading-relaxed">
-                        I'm always open to discussing new projects
+                        Sunt deschis să discut despre proiecte noi, idei sau oportunități de colaborare.
                     </p>
                 </div>
 
@@ -193,7 +192,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                    <p className="text-sm text-white/60 mb-4">Connect with me</p>
+                    <p className="text-sm text-white/60 mb-4">Mă poți găsi și pe</p>
                     <div className="flex gap-4">
                         {Object.entries(SOCIAL_LINKS).slice(0, 3).map(([platform, url]) => {
                         const Icon = socialIcons[platform];

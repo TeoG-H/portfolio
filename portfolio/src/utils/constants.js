@@ -1,41 +1,34 @@
 export const PERSONAL_INFO = {
   name: "Teodor Ghiorghiu",
-  title: "Software Engineering Studen ",
-  email: "alex@timeprogram.com",
-  location: "AC Iași",
-  tagline: "Crafting seamless digital experiences with modern web technologies",
+  title: "Student la Automatică și Calculatoare | AC Iași | CTI",
+  email: "tgiorghiu529@gmail.com",
+  location: "Iași",
   resume: "/resume.pdf",
-  bio: [
-    "I'm a passionate React developer with over 3 years of experience building modern web applications.",
-    "My expertise spans the entire frontend ecosystem, from React and Next.js to animations and performance optimization.",
-    "When I'm not coding, you'll find me contributing to open-source projects and exploring new design trends."
-  ]
 };
 
 export const SOCIAL_LINKS = {
-  github: "https://github.com",
-  linkedin: "https://linkedin.com/",
-  twitter: "https://twitter.com/",
-  dribbble: "https://dribbble.com"
+  github: "https://github.com/TeoG-H",
+  linkedin: "linkedin.com/in/teodor-ghiorghiu-617762396",
+  instagram: "https://www.instagram.com/teo.gh_/"
 };
 
 export const STATS = [
-  { label: "Years Experience", value: "3+" },
-  { label: "Projects Completed", value: "150+" },
-  { label: "Technologies", value: "15+" },
-  { label: "Client Satisfaction", value: "98%" }
+  { label: "Anul Universitar", value: "3" },
+  { label: "Proiecte Personale", value: "10+" },
+  { label: "Tehnologii Utilizate", value: "15+" },
+  //{ label: "limbaje cunoscute", value: "3+" }
 ];
 
 export const ABOUT_STATS = [
-  { label: "Happy Clients", value: "45+" },
-  { label: "Code Commits", value: "12.5K+" },
-  { label: "GitHub Stars", value: "500+" }
+  { label: "Certificări Oracle", value: "4" },
+  { label: "Arhitecturi CPU Studiate", value: "3" },
+  { label: "Tool-uri Embedded", value: "4" }
 ];
 
 export const NAV_LINKS = [
-  { id: "about", label: "About" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
+  { id: "about", label: "Despre mine" },
+  { id: "skills", label: "Competențe" },
+  { id: "projects", label: "Proiecte" },
   //{ id: "services", label: "Services" },
   { id: "contact", label: "Contact" }
 ];

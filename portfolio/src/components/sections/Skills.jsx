@@ -8,25 +8,37 @@ const Skills = () => {
 
     // Categorize skills
     const skillCategories = {
-    'Frontend Development': [
-        skills.find(s => s.name === 'React.js'),
-        skills.find(s => s.name === 'JavaScript'),
-        skills.find(s => s.name === 'TypeScript'),
-        skills.find(s => s.name === 'Next.js'),
-        skills.find(s => s.name === 'Tailwind CSS'),
-        skills.find(s => s.name === 'Redux'),
+    
+    'Software, Backend & Machine Learning': [
+      skills.find(s => s.name === 'React'),
+      skills.find(s => s.name === 'Node.js'),
+      skills.find(s => s.name === 'REST APIs'),
+      skills.find(s => s.name === 'SQL'),
+      skills.find(s => s.name === 'Firestore'),
+      skills.find(s => s.name === 'Scikit-learn'),
+      skills.find(s => s.name === 'Pandas'),
+      skills.find(s => s.name === 'NumPy'),
+      skills.find(s => s.name === 'Cosine Similarity'),
     ].filter(Boolean),
 
-    'Backend & APIs': [
-        skills.find(s => s.name === 'Node.js'),
-        skills.find(s => s.name === 'REST APIs'),
+    'Limbaje de Programare': [
+      skills.find(s => s.name === 'C / C++'),
+      skills.find(s => s.name === 'Java'),
+      skills.find(s => s.name === 'Python'),
+      skills.find(s => s.name === 'JavaScript'),
+      skills.find(s => s.name === 'Assembly'),
     ].filter(Boolean),
 
-    'Tools & Others': [
-        skills.find(s => s.name === 'Git & GitHub'),
-        skills.find(s => s.name === 'Responsive Design'),
-        skills.find(s => s.name === 'Figma'),
-        skills.find(s => s.name === 'Vite'),
+
+    'Embedded & Tool-uri': [
+      skills.find(s => s.name === 'ATmega1280 (AVR)'),
+      skills.find(s => s.name === 'RISC-V'),
+      skills.find(s => s.name === 'IAR Embedded Workbench'),
+      skills.find(s => s.name === 'Vivado / Vitis'),
+      skills.find(s => s.name === 'Git & GitHub'),
+      skills.find(s => s.name === 'Vite'),
+      skills.find(s => s.name === 'Visual Studio'),
+      skills.find(s => s.name === 'VS Code'),
     ].filter(Boolean),
     };
 
@@ -64,13 +76,13 @@ const Skills = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
             <Icons.Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary font-medium">My Expertise</span>
+            <span className="text-sm text-primary font-medium">Competențe Tehnice</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">
-            Skills & Technologies
+            Competențe și Tehnologii
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills
+            O prezentare structurată a abilităților mele tehnice
           </p>
         </div>
       </FadeIn>

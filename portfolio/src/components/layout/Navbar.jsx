@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from 'react'
+import {useState, useEffect}  from 'react'
 import {Code, Menu, X} from 'lucide-react'
 import { NAV_LINKS, PERSONAL_INFO } from '../../utils/constants'
 import { scrollToSection, useScrollSpy } from '../../hooks/useScrollSpy'
@@ -18,6 +18,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // e folosita cand apas pe butoanele de pe bara de navigatie
   const handleNavClick = (sectionId) => {
     scrollToSection(sectionId);
     setIsMenuOpen(false);
@@ -26,9 +27,8 @@ const Navbar = () => {
 
   return (
     //navbar este fix sus si (z-1000) peste toate elementele 
-    <nav  className={`fixed top-0 left-0 right-0 z-1000 w-full py-4 transition-all duration-300 
-      ${isScrolled ? "bg-black/30 backdrop-blur-lg" : "bg-transparent"}`}
-      style={{ transform: "translate3d(0, 0, 0)" }}>
+    <nav  className={`fixed top-0 left-0 right-0 z-1000 w-full py-4 transition-all duration-300 ${isScrolled ? "bg-black/30 backdrop-blur-lg" : "bg-transparent"}`}
+      style={{ transform: "translate3d(0, 0, 0)" }}> {/*pt optimizare*/} 
         
       <div className="max-w-330 mx-auto px-5">
         <div className="flex items-center justify-between">
@@ -37,13 +37,12 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <Code className="w-6 h-6 text-primary" />
             <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-              aria-label="home">
+              className="text-2xl font-bold bg-linear-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity" aria-label="home">
               {PERSONAL_INFO.name.split(" ")[0]}
             </button>
           </div>
 
-          {/* Desktop navigation apare doar la ecrane medii*/}
+          {/* apare doar la ecrane medii*/}
           <nav className="hidden md:flex items-center gap-7">
             {NAV_LINKS.map((link) => (
               <button key={link.id} onClick={() => handleNavClick(link.id)}
@@ -55,19 +54,16 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-2">
             <button onClick={() => handleNavClick("contact")}
-              className="px-8 py-3.5 bg-[#8DF6E9] text-[#121212] font-medium text-base rounded-[17px] border border-white hover:bg-[#8DF6E9]/90 transition-all duration-300"
-            >
-              Contact Me
+              className="px-6 py-2.5 bg-primary text-[#121212] font-medium text-base rounded-[17px] border border-white hover:bg-primary/90 transition-all duration-300">
+              Contactează-mă
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-white hover:text-white/80 transition-colors"
-            aria-label="menu" // ii dau un numel la acest buto pt are doar un icon si ma va ajuta mai tarziu la citit
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 text-white hover:text-white/80 transition-colors"
+            aria-label="menu" // ii dau un numel la acest buto pt are doar un icon 
             aria-expanded={isMenuOpen} // spune daca e inchis sau deschsi
           >
             {isMenuOpen ? ( <X className="w-6 h-6" /> ) : (<Menu className="w-6 h-6" /> )}
@@ -75,10 +71,12 @@ const Navbar = () => {
 
         </div>
       </div>
+
+
       {/*meniu pentru mobile */}
       <div className={`md:hidden transition-all duration-300 overflow-hidden
        ${isMenuOpen ?' max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <div className='bg-black/95 backdrop-blur-lg border-t border-white.10 px-5 py-3 space-y-3'>
+        <div className='bg-black/95 backdrop-blur-lg border-t border-white/10 px-5 py-3 space-y-3'>
              {NAV_LINKS.map((link) => (
               <button key={link.id} onClick={() => handleNavClick(link.id)}
               className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-300 
